@@ -74,6 +74,7 @@ class CreateCoreTables extends Migration
             $table->unsignedInteger('hotels_room_type_id');
             $table->date('date');
             $table->tinyInteger('count')->unsigned();
+            $table->decimal('price');
             $table->text('instructions');
         });
     }
