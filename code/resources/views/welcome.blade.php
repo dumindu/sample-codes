@@ -1,91 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-        <title>Laravel</title>
+    <title>Hotel RS</title>
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100;
-                height: 100vh;
-                margin: 0;
-            }
+<div class="container-fluid">
+    <div class="row">
+        <nav class="navbar navbar-dark bg-primary">
+            <a class="navbar-brand" href="#">Hotel RS</a>
+            <ul class="nav navbar-nav float-xs-right">
+                <li class="nav-item">
+                    <button class="navbar-toggler" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Toggle navigation"></button>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <h6 class="dropdown-header"> Hotel Management <i class="icon-building"></i></h6>
+                        <a class="dropdown-item" href="#"><i class="icon-bed"></i> Room Types</a>
+                        <a class="dropdown-item" href="#"><i class="icon-calendar-empty"></i> Calendar</a>
+                        <a class="dropdown-item" href="#"><i class="icon-calendar-check"></i> Reservations</a>
+                        <div class="dropdown-divider"></div>
+                        <h6 class="dropdown-header"> System Management <i class="icon-wrench"></i></h6>
+                        <a class="dropdown-item" href="#"><i class="icon-building"></i> Hotels</a>
+                        <a class="dropdown-item" href="#"><i class="icon-bed"></i> Room Types</a>
+                        <a class="dropdown-item" href="#"><i class="icon-bathtub"></i> Facilities</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>
 
-            .full-height {
-                height: 100vh;
-            }
 
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-3">Welcome</h1>
+        <p class="lead">to Hotel RS...</p>
+    </div>
+</div>
 
-            .position-ref {
-                position: relative;
-            }
 
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    <a href="{{ url('/login') }}">Login</a>
-                    <a href="{{ url('/register') }}">Register</a>
-                </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
-            </div>
-        </div>
-    </body>
+<script src="js/app.js"></script>
+</body>
 </html>
