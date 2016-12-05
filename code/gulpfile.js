@@ -15,6 +15,6 @@ require('laravel-elixir-vue-2');
 
 elixir(mix => {
     mix.sass(['app.scss', '../fontello/css/fontello.css', '../fontello/css/animation.css', '../x-editable/css/bootstrap-editable.css', '../css/app.css'])
-       .webpack(['../x-editable/js/bootstrap-editable.js', 'app.js']);
+       .webpack('app.js');
     mix.copy('resources/assets/fontello/font', 'public/font');
 });
