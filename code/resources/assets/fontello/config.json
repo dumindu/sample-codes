@@ -19,12 +19,6 @@
       "src": "fontawesome"
     },
     {
-      "uid": "64abb7c56aefca89046bb69f7251d2e2",
-      "css": "calendar",
-      "code": 59392,
-      "src": "elusive"
-    },
-    {
       "uid": "3v2lgx3os8ub377alyqm8mn2o7r4zywg",
       "css": "grid",
       "code": 59393,
@@ -83,18 +77,6 @@
       "css": "save",
       "code": 59406,
       "src": "entypo"
-    },
-    {
-      "uid": "7560ca08e3d83e43c58fcbf8f16d8f03",
-      "css": "cog-circled",
-      "code": 59407,
-      "src": "elusive"
-    },
-    {
-      "uid": "2110049635bb7cea7ef41c28d9c15b32",
-      "css": "edit-circled",
-      "code": 59409,
-      "src": "elusive"
     },
     {
       "uid": "107ce08c7231097c7447d8f4d059b55f",
@@ -163,12 +145,6 @@
       "src": "elusive"
     },
     {
-      "uid": "ff70f7b3228702e0d590e60ed3b90bea",
-      "css": "magic",
-      "code": 61648,
-      "src": "fontawesome"
-    },
-    {
       "uid": "b2cc036e1ba44934896c345436ac44d1",
       "css": "id-badge",
       "code": 62145,
@@ -233,6 +209,72 @@
       "css": "coffee",
       "code": 59416,
       "src": "typicons"
+    },
+    {
+      "uid": "ede2ea0a583f662b79fbb181b428c20d",
+      "css": "building",
+      "code": 61869,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "e7eecc3cc44f3f4cad6229b202588308",
+      "css": "calendar-plus",
+      "code": 62065,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "e66ec405e2e1f3bec6546b4e776924d3",
+      "css": "calendar-minus",
+      "code": 62066,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "a027a2ce420dfd6b660212d5ac6a7cc9",
+      "css": "calendar-times",
+      "code": 62067,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "9de4ac1aec6b1cca1929e1407eecf3db",
+      "css": "calendar-check",
+      "code": 62068,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "2110049635bb7cea7ef41c28d9c15b32",
+      "css": "edit-circled",
+      "code": 59409,
+      "src": "elusive"
+    },
+    {
+      "uid": "7560ca08e3d83e43c58fcbf8f16d8f03",
+      "css": "cog-circled",
+      "code": 59417,
+      "src": "elusive"
+    },
+    {
+      "uid": "5e5a88921aa39b292bdd56c3b9c923d3",
+      "css": "gift",
+      "code": 59418,
+      "src": "elusive"
+    },
+    {
+      "uid": "ead4c82d04d7758db0f076584893a8c1",
+      "css": "calendar-empty",
+      "code": 61747,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "21b42d3c3e6be44c3cc3d73042faa216",
+      "css": "sliders",
+      "code": 61918,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "zc0c8s0nyweeeo9i8a3rucu7alwxt56r",
+      "css": "wrench",
+      "code": 59392,
+      "src": "modernpics"
     }
   ]
 }
