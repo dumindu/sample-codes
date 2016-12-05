@@ -1008,7 +1008,7 @@ Applied as jQuery method.
         @method tip()
         */         
         tip: function() {
-            return this.container() ? this.container().$tip : null;
+            return this.container() ? $(this.container().tip) : null;
         },
 
         /* returns container object */
@@ -4679,10 +4679,10 @@ Editableform based on Twitter Bootstrap 3
     //buttons
     $.fn.editableform.buttons = 
       '<button type="submit" class="btn btn-primary btn-sm editable-submit">'+
-        '<i class="glyphicon glyphicon-ok"></i>'+
+        '<i class="icon-ok" aria-hidden="true"></i>'+
       '</button>'+
       '<button type="button" class="btn btn-default btn-sm editable-cancel">'+
-        '<i class="glyphicon glyphicon-remove"></i>'+
+        '<i class="icon-cancel" aria-hidden="true"></i>'+
       '</button>';         
     
     //error classes
@@ -4867,7 +4867,7 @@ Editableform based on Twitter Bootstrap 3
                 .addClass('in');
            */
                      
-           
+            /*
             var $tip = this.tip();
             
             var placement = typeof this.options.placement == 'function' ?
@@ -4909,7 +4909,8 @@ Editableform based on Twitter Bootstrap 3
             var calculatedOffset = this.getCalculatedOffset(placement, pos, actualWidth, actualHeight);
 
             this.applyPlacement(calculatedOffset, placement);            
-                     
+
+             */
                 
             }).call(this.container());
           /*jshint laxcomma: false, eqeqeq: true*/  
