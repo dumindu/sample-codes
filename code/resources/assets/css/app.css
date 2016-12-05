@@ -1,0 +1,74 @@
+.btn-round {
+    padding: 0.75rem;
+    border-radius: 10rem;
+    max-width: 3em;
+}
+
+.tag-round-text {
+    padding-right: .5em;
+    padding-left: .5em;
+    border-radius: 10rem;
+}
+.tag-round-icon {
+    padding-right: 0.1em;
+    padding-left: 0.1em;
+    border-radius: 10rem;
+}
+
+    .btn-round .tag-round-text, .btn-round .tag-round-icon {
+        top: 0.7rem;
+        right: 0.3rem;
+    }
+
+.breadcrumb, .calendar {
+    margin-top: 3em;
+}
+.calendar__dates_wrapper {
+    margin-top: .85em;
+}
+
+.calendar__toolbar .btn-group, .btn-toolbar .input-group {
+    float: right;
+}
+
+.calendar__date {
+    width: 14.28571428571429%;
+    float: left;
+    text-align: center;
+    font-weight: bold;
+}
+
+.calendar__days_wrapper {
+    border-right: 2px solid #FFFFFF;
+    border-bottom: 2px solid #FFFFFF;
+}
+    .calendar__day {
+        width: 14.28571428571429%;
+        float: left;
+        background: #f5f5f5;
+        border: 2px solid #FFFFFF;
+        border-right-width: 0px;
+        border-bottom-width: 0px;
+        min-height: 150px;
+    }
+        .calendar__day__date {
+            color: #b6b6b6;
+            text-align: right;
+            padding-right: .3em;
+        }
+        .calendar__day__room_data {
+            font-size: .875rem;
+            clear: both;
+            margin: .875em 0 0 0;
+        }
+            .calendar__day__room_data .col-lg-4,  .calendar__day__room_data .col-lg-8 {
+                padding-left: .2em;
+                padding-right: .2em;
+            }
+
+@media (max-width: 543px) {
+    .calendar__toolbar .btn {
+        padding: .5rem;
+        font-size: .875rem;
+    }
+}
