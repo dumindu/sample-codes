@@ -59,12 +59,20 @@
         .calendar__day__room_data {
             font-size: .875rem;
             clear: both;
-            margin: .875em 0 0 0;
+            padding-top: .875em ;
+            margin: 0;
         }
             .calendar__day__room_data .col-lg-4,  .calendar__day__room_data .col-lg-8 {
                 padding-left: .2em;
                 padding-right: .2em;
             }
+
+.bg_1 {
+    background: #e4f9df;
+}
+.bg_2 {
+    background: #f9f5cd;
+}
 
 @media (max-width: 543px) {
     .calendar__toolbar .btn {
