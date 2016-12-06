@@ -53,7 +53,7 @@ class CreateCoreTables extends Migration
             $table->primary(['hotels_room_type_id', 'room_type_facility_id'], 'hotels_room_types_room_type_facilities_primary');
         });
 
-        Schema::create('hotels_room_types_calendar', function (Blueprint $table) {
+        Schema::create('hotels_room_types_issuance_calendar', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('hotels_room_type_id');
             $table->date('date');

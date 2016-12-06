@@ -41,8 +41,8 @@ hotels_room_type_id
 room_type_facility_id
 
 
-hotels_room_types_calendar
---------------------------
+hotels_room_types_issuance_calendar
+-----------------------------------
 id
 hotels_room_type_id
 date
