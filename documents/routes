@@ -11,8 +11,8 @@
 
 /hotels/<name-id>/room_types/<id>/facilities
 
-/hotels/<name-id>/calendar/<month>
-/hotels/<name-id>/calendar/<month>/room_types/<id>
+/hotels/<name-id>/issuance_calendar/<month>
+/hotels/<name-id>/issuance_calendar/<month>/room_types/<id>
 
 /hotels/<name-id>/reservation_calendar/<month>
 /hotels/<name-id>/reservation_calendar/<month>/room_types/<id>
