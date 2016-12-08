@@ -18,7 +18,7 @@ $( document ).ready(function() {
 
             return (date && hotelRoomTypeId && defaultPrice) ? {date: date, hotelRoomTypeId: hotelRoomTypeId, defaultPrice: defaultPrice} : '';
         },
-        url: hotel_calendar_cell_update_url,
+        url: hotel_calendar_update_url,
         title: 'Change Availability',
         name: 'defaultCount'
     });

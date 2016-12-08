@@ -96,6 +96,6 @@
 
 @section('globaljs')
 var hotel_url = '{{ $hotelUrl  }}';
-var hotel_calendar_cell_update_url = '{{ $hotelUrl  }}/issuance-calendar';
+var hotel_calendar_update_url = '{{ $hotelUrl  }}/issuance-calendar';
 var csrf_token = '{{ csrf_token() }}';
 @endsection
