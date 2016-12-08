@@ -4,27 +4,36 @@ require('bootstrap');
 require('../x-editable/js/bootstrap-editable');
 
 $( document ).ready(function() {
+    $.fn.editable.defaults.params = function (params) {
+        params._token = csrf_token;
+        return params;
+    };
+
     $('.calendar__day__room_count').editable({
         type: 'number',
         pk: function() {
             var date = $(this).closest(".calendar__day").data('date');
-            var roomType = $(this).closest(".calendar__day__room_data").data('room-type');
-            return (date && roomType) ? {date: date, roomType: roomType} : '';
+            var hotelRoomTypeId = $(this).closest(".calendar__day__data_section").data('hotel-room-type-id');
+            var defaultPrice = $(this).closest(".calendar__day__data_section").find(".calendar__day__room_price").html();
+
+            return (date && hotelRoomTypeId && defaultPrice) ? {date: date, hotelRoomTypeId: hotelRoomTypeId, defaultPrice: defaultPrice} : '';
         },
-        url: '/update',
+        url: hotel_calendar_cell_update_url,
         title: 'Change Availability',
-        name: 'roomCount'
+        name: 'defaultCount'
     });
 
     $('.calendar__day__room_price').editable({
         type: 'number',
         pk: function() {
             var date = $(this).closest(".calendar__day").data('date');
-            var roomType = $(this).closest(".calendar__day__room_data").data('room-type');
-            return (date && roomType) ? {date: date, roomType: roomType} : '';
+            var hotelRoomTypeId = $(this).closest(".calendar__day__data_section").data('hotel-room-type-id');
+            var defaultCount = $(this).closest(".calendar__day__data_section").find(".calendar__day__room_count").html();
+
+            return (date && hotelRoomTypeId && defaultCount) ? {date: date, hotelRoomTypeId: hotelRoomTypeId, defaultCount: defaultCount} : '';
         },
-        url: '/update',
+        url: hotel_calendar_cell_update_url,
         title: 'Change Price',
-        name: 'roomPrice'
+        name: 'defaultPrice'
     });
 });
