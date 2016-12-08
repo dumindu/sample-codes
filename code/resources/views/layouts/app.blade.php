@@ -11,7 +11,7 @@
 </head>
 <body>
 
-<div class="container-fluid">
+<header class="container-fluid">
     <div class="row">
         <nav class="navbar navbar-dark bg-primary">
             <a class="navbar-brand" href="#">Hotel RS</a>
@@ -34,9 +34,13 @@
             </ul>
         </nav>
     </div>
-</div>
+</header>
 
 @yield('content')
+
+<nav id="site-footer" class="navbar navbar-light bg-faded text-sm-center">
+    <span>Made with ♥ by <a href="https://medium.com@dumindu">Dumindu Madunuwan</a></span>
+</nav>
 
 <script src="/js/app.js"></script>
 </body>
