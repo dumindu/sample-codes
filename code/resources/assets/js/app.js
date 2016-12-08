@@ -32,7 +32,7 @@ $( document ).ready(function() {
 
             return (date && hotelRoomTypeId && defaultCount) ? {date: date, hotelRoomTypeId: hotelRoomTypeId, defaultCount: defaultCount} : '';
         },
-        url: hotel_calendar_cell_update_url,
+        url: hotel_calendar_update_url,
         title: 'Change Price',
         name: 'defaultPrice'
     });
