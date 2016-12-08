@@ -29,13 +29,15 @@ class HotelIssuanceCalendarController extends Controller
             $hotelData = $this->hotel->getHotelDataByHotelId($hotelId);
             $hotelRoomTypesData = $this->hotel->getHotelRoomTypesDataByHotelId($hotelId);
             $calendarWidgetData = $this->calendarWidget->getCalendarWidgetDataByMonth($month);
+            $calendarData = $this->hotelRoomTypeIssuanceCalendar->getCalendarDataByMonth($month, $hotelId);
 
             if ($hotelData && $hotelRoomTypesData && $calendarWidgetData) {
                 $data = [
                     'month' => $month,
                     'hotelData' => $hotelData,
                     'hotelRoomTypesData' => $hotelRoomTypesData,
-                    'calendarWidgetData' => $calendarWidgetData
+                    'calendarWidgetData' => $calendarWidgetData,
+                    'calendarData' => $calendarData
                 ];
 
                 return view('hotels.calendar', $data);
@@ -43,9 +45,19 @@ class HotelIssuanceCalendarController extends Controller
         }
     }
 
-    public function store()
+    public function store(Request $request)
     {
-        //
+        $name = $request->get('name');
+        $value = $request->get('value');
+        $otherData = $request->get('pk');
+        $data = [
+            'hotelRoomTypeId' => $otherData['hotelRoomTypeId'],
+            'date' => $otherData['date'],
+            'defaultCount' => isset($otherData['defaultCount']) && 'defaultPrice' == $name ? $otherData['defaultCount'] : $value,
+            'defaultPrice' => isset($otherData['defaultPrice']) && 'defaultCount' == $name ? $otherData['defaultPrice'] : $value
+        ];
+
+        $this->hotelRoomTypeIssuanceCalendar->insertOrUpdateIfExists([$data]);
     }
 
     protected function validateDate($date, $format = 'Y-m-d')

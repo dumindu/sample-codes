@@ -56,18 +56,25 @@
                 @endfor
 
                 @for ($i = 1; $i <= $calendarWidgetData['daysInMonth']; $i++)
-                    <div class="calendar__day" data-date="{{ $month . '-' . str_pad($i, 2, "0", STR_PAD_LEFT) }}">
+                    @php
+                        $calendarDate = $month . '-' . str_pad($i, 2, "0", STR_PAD_LEFT);
+                    @endphp
+                    <div class="calendar__day" data-date="{{ $calendarDate }}">
                         <div class="calendar__day__date">{{ $i }}</div>
                         <div>
                             @foreach ($hotelRoomTypesData as $hotelRoomTypeData)
+                                @php
+                                    $roomCount = isset($calendarData[$calendarDate][$hotelRoomTypeData['room_type_id']]['defaultCount']) ? $calendarData[$calendarDate][$hotelRoomTypeData['room_type_id']]['defaultCount'] : $hotelRoomTypeData['default_count'];
+                                    $roomPrice = isset($calendarData[$calendarDate][$hotelRoomTypeData['room_type_id']]['defaultPrice']) ? $calendarData[$calendarDate][$hotelRoomTypeData['room_type_id']]['defaultPrice'] : $hotelRoomTypeData['default_price'];
+                                @endphp
                                 <div class="calendar__day__data_section left_border_{{ $hotelRoomTypeData['room_type_id'] }}" data-hotel-room-type-id="{{ $hotelRoomTypeData['id'] }}">
                                     <div>
                                         <i class="icon-book"></i>
-                                        <a class="calendar__day__room_count" href="#">{{ $hotelRoomTypeData['default_count'] }}</a>
+                                        <a class="calendar__day__room_count" href="#">{{ $roomCount }}</a>
                                     </div>
                                     <div>
                                         <i class="icon-shop"></i>
-                                        <a class="calendar__day__room_price" href="#">{{ $hotelRoomTypeData['default_price'] }}</a> IDR
+                                        <a class="calendar__day__room_price" href="#">{{ $roomPrice }}</a> IDR
                                     </div>
                                 </div>
                             @endforeach
