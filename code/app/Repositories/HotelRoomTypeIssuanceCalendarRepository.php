@@ -50,8 +50,52 @@ class HotelRoomTypeIssuanceCalendarRepository
 
     function insertOrUpdateIfExists($data)
     {
-        $sql = $this->hotelRoomTypeIssuanceCalendar->getInsertOrUpdateIfExistsQuery($data);
-        $this->hotelRoomTypeIssuanceCalendar->getConnection()->statement($sql);
+        if (!isset($data['startDate']) && !isset($data['endDate'])) {
+            $sql = $this->hotelRoomTypeIssuanceCalendar->getInsertOrUpdateIfExistsQuery([$data]);
+            $this->hotelRoomTypeIssuanceCalendar->getConnection()->statement($sql);
+        } else {
+            $processedDataArray = [];
+            $selectedDaysArray = $this->getSelectedDaysArray($data['selectedDayGroup'], $data['selectedDays']);
 
+            $begin = new \DateTime($data['startDate']);
+            $end = new \DateTime($data['endDate']);
+            $end = $end->modify( '+1 day' );
+
+            $interval = new \DateInterval('P1D');
+            $daterange = new \DatePeriod($begin, $interval ,$end);
+
+            foreach($daterange as $date){
+                if (in_array($date->format('N'), $selectedDaysArray)) {
+                    $processedDataArray[] = [
+                        'hotelRoomTypeId' => $data['hotelRoomTypeId'],
+                        'date' => $date->format("Y-m-d"),
+                        'defaultCount' => $data['defaultCount'],
+                        'defaultPrice' => $data['defaultPrice']
+                    ];
+                }
+            }
+
+            $sql = $this->hotelRoomTypeIssuanceCalendar->getInsertOrUpdateIfExistsQuery($processedDataArray);
+            $this->hotelRoomTypeIssuanceCalendar->getConnection()->statement($sql);
+        }
+    }
+
+    protected function getSelectedDaysArray($selectedDayGroup, $selectedDays)
+    {
+        $result = [];
+        switch ($selectedDayGroup) {
+            case 'all_days':
+                $result = range(1,7);
+                break;
+            case 'all_weekdays':
+                $result = range(1,5);
+                break;
+            case 'all_weekends':
+                $result = [6, 7];
+                break;
+            case 'custom':
+                $result = $selectedDays;
+        }
+        return $result;
     }
 }

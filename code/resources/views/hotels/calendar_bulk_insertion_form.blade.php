@@ -1,7 +1,7 @@
 <div class="modal fade" id="mod_bulk_operations">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-            <form name="fm_bulk_operations" method="post" href="$hotelUrl">
+            <form name="fm_bulk_operations" method="post" href="$hotelUrl" action="{{ $hotelUrl  }}/issuance-calendar">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
@@ -11,9 +11,9 @@
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="hotelRoomType">Select Room</label>
-                        <select class="form-control" name="hotelRoomType">
+                        <select class="form-control" name="hotelRoomTypeId">
                             <option value="1">Single Room</option>
-                            <option value="1">Double Room</option>
+                            <option value="2">Double Room</option>
                         </select>
                     </div>
                     <div class="form-group">
@@ -31,16 +31,16 @@
                     <div class="form-group">
                         <div class="row">
                             <div class="col-xs-3">
-                                <input type="radio" name="days" value="all_days" checked> All Days
+                                <input type="radio" name="selectedDayGroup" value="all_days" checked> All Days
                             </div>
                             <div class="col-xs-3">
-                                <input type="radio" name="days" value="all_weekdays"> All Weekdays
+                                <input type="radio" name="selectedDayGroup" value="all_weekdays"> All Weekdays
                             </div>
                             <div class="col-xs-3">
-                                <input type="radio" name="days" value="all_weekends"> All Weekends
+                                <input type="radio" name="selectedDayGroup" value="all_weekends"> All Weekends
                             </div>
                             <div class="col-xs-3">
-                                <input type="radio" name="days" value="custom"> Custom
+                                <input type="radio" name="selectedDayGroup" value="custom"> Custom
                             </div>
                         </div>
                     </div>
@@ -48,29 +48,29 @@
                         <div class="form-group">
                             <div class="row">
                                 <div class="col-xs-3">
-                                    <input type="checkbox" name="days" value="mondays"> Mondays
+                                    <input type="checkbox" name="selectedDays[]" value="1"> Mondays
                                 </div>
                                 <div class="col-xs-3">
-                                    <input type="checkbox" name="days" value="tuesdays"> Tuesdays
+                                    <input type="checkbox" name="selectedDays[]" value="2"> Tuesdays
                                 </div>
                                 <div class="col-xs-3">
-                                    <input type="checkbox" name="days" value="wednesdays"> Wednesdays
+                                    <input type="checkbox" name="selectedDays[]" value="3"> Wednesdays
                                 </div>
                                 <div class="col-xs-3">
-                                    <input type="checkbox" name="days" value="thursdays"> Thursdays
+                                    <input type="checkbox" name="selectedDays[]" value="4"> Thursdays
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="row">
                                 <div class="col-xs-3">
-                                    <input type="checkbox" name="days" value="fridays"> Fridays
+                                    <input type="checkbox" name="selectedDays[]" value="5"> Fridays
                                 </div>
                                 <div class="col-xs-3">
-                                    <input type="checkbox" name="days" value="saturdays"> Saturdays
+                                    <input type="checkbox" name="selectedDays[]" value="6"> Saturdays
                                 </div>
                                 <div class="col-xs-3">
-                                    <input type="checkbox" name="days" value="sundays"> Sundays
+                                    <input type="checkbox" name="selectedDays[]" value="7"> Sundays
                                 </div>
                                 <div class="col-xs-3">
                                     &nbsp;
@@ -83,17 +83,19 @@
                             <div class="col-xs-6">
                                 <label for="defaultCount">Availability</label>
                                 <br/>
-                                <input type="number" name="defaultCount" required>
+                                <input type="number" name="defaultCount" required min="0" max="255">
                             </div>
                             <div class="col-xs-6">
                                 <label for="defaultPrice">Price</label>
                                 <br/>
-                                <input type="number" name="defaultPrice" required>
+                                <input type="number" name="defaultPrice" required  min="0" max="4294967294">
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="modal-footer">
+                    <input name="returnUrl" type="hidden" value="http://{{ $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] }}">
+                    {{ csrf_field() }}
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     <button type="submit" class="btn btn-primary">Save changes</button>
                 </div>

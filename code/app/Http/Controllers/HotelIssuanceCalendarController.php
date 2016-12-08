@@ -47,6 +47,15 @@ class HotelIssuanceCalendarController extends Controller
 
     public function store(Request $request)
     {
+        if ($request->get('name') && $request->get('value')) {
+            $this->cellUpdate($request);
+        } else {
+            $this->bulkUpdate($request);
+        }
+    }
+
+    protected function cellUpdate(Request $request)
+    {
         $name = $request->get('name');
         $value = $request->get('value');
         $otherData = $request->get('pk');
@@ -57,7 +66,35 @@ class HotelIssuanceCalendarController extends Controller
             'defaultPrice' => isset($otherData['defaultPrice']) && 'defaultCount' == $name ? $otherData['defaultPrice'] : $value
         ];
 
-        $this->hotelRoomTypeIssuanceCalendar->insertOrUpdateIfExists([$data]);
+        $this->hotelRoomTypeIssuanceCalendar->insertOrUpdateIfExists($data);
+    }
+
+    protected function bulkUpdate(Request $request)
+    {
+        $hotelRoomTypeId = $request->get('hotelRoomTypeId');
+        $startDate = $request->get('startDate');
+        $endDate = $request->get('endDate');
+        $defaultCount = $request->get('defaultCount');
+        $defaultPrice = $request->get('defaultPrice');
+
+        $selectedDayGroup = $request->get('selectedDayGroup');
+        $selectedDays = 'custom' != $selectedDayGroup ? null : $request->get('selectedDays');
+
+        if($hotelRoomTypeId && $startDate && $endDate && $defaultCount && $defaultPrice) {
+            $data = [
+                'hotelRoomTypeId' => $hotelRoomTypeId,
+                'startDate' => $startDate,
+                'endDate' => $endDate,
+                'defaultCount' => $defaultCount,
+                'defaultPrice' => $defaultPrice,
+                'selectedDayGroup' => $selectedDayGroup,
+                'selectedDays' => $selectedDays
+            ];
+            $this->hotelRoomTypeIssuanceCalendar->insertOrUpdateIfExists($data);
+        }
+
+        $returnUrl = $request->get('returnUrl');
+        header('Location: ' . $returnUrl);exit;
     }
 
     protected function validateDate($date, $format = 'Y-m-d')
