@@ -70,11 +70,11 @@
                                 <div class="calendar__day__data_section left_border_{{ $hotelRoomTypeData['room_type_id'] }}" data-hotel-room-type-id="{{ $hotelRoomTypeData['id'] }}">
                                     <div>
                                         <i class="icon-book"></i>
-                                        <a class="calendar__day__room_count" href="#">{{ $roomCount }}</a>
+                                        <a class="calendar__day__room_count" href="#" min="0" max="255">{{ $roomCount }}</a>
                                     </div>
                                     <div>
                                         <i class="icon-shop"></i>
-                                        <a class="calendar__day__room_price" href="#">{{ $roomPrice }}</a> IDR
+                                        <a class="calendar__day__room_price" href="#" min="0" max="4294967294">{{ $roomPrice }}</a> IDR
                                     </div>
                                 </div>
                             @endforeach
