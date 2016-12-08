@@ -25,15 +25,15 @@
                 <div class="col-sm-6">
                     <div class="btn-toolbar calendar__toolbar" role="toolbar" aria-label="Toolbar with button groups">
                         <div class="btn-group hidden-sm-down" role="group" aria-label="Basic example">
-                            <a class="btn btn-secondary active"><i class="icon-grid"></i></a>
-                            <a class="btn btn-secondary"><i class="icon-list"></i></a>
+                            <a class="btn btn-primary active"><i class="icon-grid"></i></a>
+                            <a class="btn btn-primary"><i class="icon-list"></i></a>
                         </div>
                         <div class="btn-group" role="group" aria-label="Basic example" data-toggle="modal" data-target="#mod_bulk_operations">
-                            <a class="btn btn-secondary"><i class="icon-edit"></i></a>
+                            <a class="btn btn-primary"><i class="icon-edit"></i></a>
                         </div>
                         <div class="btn-group" role="group" aria-label="Basic example">
-                            <a class="btn btn-secondary" href="{{ $hotelUrl }}/issuance-calendar/{{ $calendarWidgetData['lastMonth'] }}"><i class="icon-left"></i></a>
-                            <a class="btn btn-secondary" href="{{ $hotelUrl }}/issuance-calendar/{{ $calendarWidgetData['nextMonth'] }}"><i class="icon-right"></i></a>
+                            <a class="btn btn-primary" href="{{ $hotelUrl }}/issuance-calendar/{{ $calendarWidgetData['lastMonth'] }}"><i class="icon-left"></i></a>
+                            <a class="btn btn-primary" href="{{ $hotelUrl }}/issuance-calendar/{{ $calendarWidgetData['nextMonth'] }}"><i class="icon-right"></i></a>
                         </div>
                     </div>
                 </div>

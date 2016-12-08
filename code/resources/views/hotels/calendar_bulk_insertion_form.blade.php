@@ -20,11 +20,11 @@
                         <div class="row">
                             <div class="col-xs-6">
                                 <label for="startDate">Start Date</label>
-                                <input type="date" name="startDate" min="{{ date('Y-m-d') }}">
+                                <input type="date" name="startDate" min="{{ date('Y-m-d') }}" required placeholder='YYYY-MM-DD' pattern="(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))">
                             </div>
                             <div class="col-xs-6">
                                 <label for="endDate">End Date</label>
-                                <input type="date" name="endDate" min="{{ date('Y-m-d') }}">
+                                <input type="date" name="endDate" min="{{ date('Y-m-d') }}" required placeholder='YYYY-MM-DD' pattern="(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))">
                             </div>
                         </div>
                     </div>
@@ -83,12 +83,12 @@
                             <div class="col-xs-6">
                                 <label for="defaultCount">Availability</label>
                                 <br/>
-                                <input type="number" name="defaultCount">
+                                <input type="number" name="defaultCount" required>
                             </div>
                             <div class="col-xs-6">
                                 <label for="defaultPrice">Price</label>
                                 <br/>
-                                <input type="number" name="defaultPrice">
+                                <input type="number" name="defaultPrice" required>
                             </div>
                         </div>
                     </div>
