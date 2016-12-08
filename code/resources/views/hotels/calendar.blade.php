@@ -56,11 +56,11 @@
                 @endfor
 
                 @for ($i = 1; $i <= $calendarWidgetData['daysInMonth']; $i++)
-                    <div class="calendar__day" data-date="{{ $month . '-' . $i}}">
+                    <div class="calendar__day" data-date="{{ $month . '-' . str_pad($i, 2, "0", STR_PAD_LEFT) }}">
                         <div class="calendar__day__date">{{ $i }}</div>
                         <div>
                             @foreach ($hotelRoomTypesData as $hotelRoomTypeData)
-                                <div class="calendar__day__data_section left_border_{{ $hotelRoomTypeData['room_type_id'] }}">
+                                <div class="calendar__day__data_section left_border_{{ $hotelRoomTypeData['room_type_id'] }}" data-hotel-room-type-id="{{ $hotelRoomTypeData['id'] }}">
                                     <div>
                                         <i class="icon-book"></i>
                                         <a class="calendar__day__room_count" href="#">{{ $hotelRoomTypeData['default_count'] }}</a>
@@ -84,4 +84,11 @@
         @include('hotels.calendar_bulk_insertion_form')
 
     </div>
+@endsection
+
+
+@section('globaljs')
+var hotel_url = '{{ $hotelUrl  }}';
+var hotel_calendar_cell_update_url = '{{ $hotelUrl  }}/issuance-calendar';
+var csrf_token = '{{ csrf_token() }}';
 @endsection

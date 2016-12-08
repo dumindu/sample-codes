@@ -42,6 +42,10 @@
     <span>Made with ♥ by <a href="https://medium.com@dumindu">Dumindu Madunuwan</a></span>
 </nav>
 
+<script>
+    @yield('globaljs')
+</script>
 <script src="/js/app.js"></script>
+
 </body>
 </html>
