@@ -37,7 +37,7 @@ class CreateCoreTables extends Migration
             $table->unsignedInteger('hotel_id');
             $table->unsignedInteger('room_type_id');
             $table->tinyInteger('default_count')->unsigned();
-            $table->decimal('default_price');
+            $table->integer('default_price')->unsigned();
         });
 
         Schema::create('room_type_facilities', function (Blueprint $table) {
@@ -58,7 +58,9 @@ class CreateCoreTables extends Migration
             $table->unsignedInteger('hotels_room_type_id');
             $table->date('date');
             $table->tinyInteger('default_count')->unsigned();
-            $table->decimal('default_price');
+            $table->unsignedInteger('default_price');
+
+            $table->unique(['hotels_room_type_id', 'date'], 'hotels_room_types_issuance_calendar_unique');
         });
 
         Schema::create('hotels_reservations', function (Blueprint $table) {
@@ -74,7 +76,7 @@ class CreateCoreTables extends Migration
             $table->unsignedInteger('hotels_room_type_id');
             $table->date('date');
             $table->tinyInteger('count')->unsigned();
-            $table->decimal('price');
+            $table->unsignedInteger('price');
             $table->text('instructions');
         });
     }
@@ -91,7 +93,7 @@ class CreateCoreTables extends Migration
         Schema::drop('hotels_room_types');
         Schema::drop('room_type_facilities');
         Schema::drop('hotels_room_types_room_type_facilities');
-        Schema::drop('hotels_room_types_calendar');
+        Schema::drop('hotels_room_types_issuance_calendar');
         Schema::drop('hotels_reservations');
         Schema::drop('hotels_room_types_reservation_calendar');
     }
