@@ -1,4 +1,28 @@
-#Instructions
+# Question
+## Fullstack test
+
+### Scenario:
+* We have a hotel that has two room types:
+  * Double room : This has an inventory of 5 rooms
+  * Single room : This has an inventory of 5 rooms
+* All rooms are available for booking on all days.
+* Prices and inventory are independent of each other on a daily basis.
+
+### Task:
+* Create a working single page app that allows updates to the calendar, persisting to the database
+* The changes to price or inventory should stay changed even if you refresh the page.
+* The Bulk Operations form should allow to update multiple days at once depending on the selected criteria.
+* UI should be polished. Similar to the above screenshot.
+
+###  Additional Points
+* You’re allowed to use an existing framework.
+* We’re looking for a functional page but equally important is clean code.
+* We prefer if you can host it somewhere for us to test. However, we’re perfectly fine with sending us a zip file or repo link.
+
+
+
+# Solution
+## Instructions to test
 
 * Clone repo
 * Change DB configurations in .env 
