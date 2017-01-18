@@ -10,7 +10,7 @@
 
 This data is presented in a calendar view, like below:
 
-[![sample calendar view](assets/images/sample_calendar_view.png)]
+![sample calendar view](assets/images/sample_calendar_view.png)
 
 **Task:**
 * Create a working single page app that allows updates to the calendar, persisting to the database
