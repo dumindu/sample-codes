@@ -4,8 +4,7 @@
     "type": "project",
     "authors": [
         {
-            "name": "Dumindu Madunuwan",
-            "email": ""
+            "name": "Dumindu Madunuwan"
         }
     ],
     "minimum-stability": "dev",
