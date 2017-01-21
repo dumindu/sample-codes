@@ -1,3 +1,31 @@
-body {
-    color: #FF0000;
+#menu-btn {
+    position: absolute;
+    font-size: 1.5rem;
+    right: 1.2rem;
+    top: 1.2rem;
+    cursor: pointer;
+    color: #e9e7e4;
+    opacity: 1;
+    z-index: 1040;
 }
+
+#footer {
+    height: 60px;
+    line-height: 60px;
+}
+
+.page-cover {
+    border: none;
+    border-radius: 0;
+    margin-bottom: 2rem;
+}
+    .page-cover a:hover {
+        text-decoration: none;
+    }
+    .page-cover h4 {
+        display: inline;
+    }
+    .page-cover img {
+        border-radius: 0;
+        object-fit: cover;
+    }

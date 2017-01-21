@@ -20,4 +20,6 @@ class AppConfig {
     const STATIC_PATHS = [
         'viewDir' => __DIR__ . '/../../../resources/views'
     ];
+
+    const PROJECT_URL = 'https://github.com/dumindu/composer-project-skeleton#readme';
 }

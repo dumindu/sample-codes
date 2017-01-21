@@ -1,5 +1,15 @@
 {% extends "layouts/main.html" %}
 
 {% block content %}
-<p>{{ greeting }}</p>
+<div class="container">
+    <div class="jumbotron">
+        <h1 class="display-3"> {{ greeting }} </h1>
+        <p class="lead">This is a simple PHP Composer project skeleton with Bootstrap 4</p>
+        <hr class="my-4">
+        <p>It uses Eloquent as the ORM, Twig as the Template Engine, Bramus Router as the PHP Router Library, Bootstrap 4 as the Frontend Framework, Icon fonts which generated through Fontello and Gulp to concatenate and minify asset files.</p>
+        <p class="lead">
+            <a class="btn btn-primary btn-lg" href=" {{ projectUrl }}" role="button">Learn more</a>
+        </p>
+    </div>
+</div>
 {% endblock %}
