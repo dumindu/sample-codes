@@ -1,12 +1,19 @@
 <?php
 namespace App\Controllers;
 
-class HelloWorld
+class HelloWorld extends TwigBase
 {
     public $greeting = 'Hello, World!';
 
     public function greet()
     {
-        return $this->greeting;
+        $data = [
+            'pageMeta' => [
+                'title' => $this->greeting
+            ],
+            'greeting' => $this->greeting
+        ];
+
+        echo $this->view->render('hello-world.html', $data);
     }
 }

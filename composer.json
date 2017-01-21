@@ -9,7 +9,9 @@
     ],
     "minimum-stability": "dev",
     "require": {
-        "bramus/router": "^1.1"
+        "php": "^7.0",
+        "bramus/router": "^1.1",
+        "twig/twig": "^2.1"
     },
     "autoload":
     {
