@@ -1,0 +1,13 @@
+{
+    "name": "dumindu/composer-project-skeleton",
+    "description": "A simple PHP Composer project skeleton with Bootstrap 4",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Dumindu Madunuwan",
+            "email": ""
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
