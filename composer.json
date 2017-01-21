@@ -2,9 +2,13 @@
     "name": "dumindu/composer-project-skeleton",
     "description": "A simple PHP Composer project skeleton with Bootstrap 4",
     "type": "project",
+    "homepage": "https://github.com/dumindu/composer-project-skeleton#readme",
+    "keywords": "composer, project, skeleton, bootstrap, gulp",
     "authors": [
         {
-            "name": "Dumindu Madunuwan"
+            "name": "Dumindu Madunuwan",
+            "homepage": "https://medium.com/@dumindu",
+            "role": "Developer"
         }
     ],
     "minimum-stability": "dev",
@@ -14,10 +18,8 @@
         "twig/twig": "^2.1",
         "illuminate/database": "^5.3"
     },
-    "autoload":
-    {
-        "psr-4":
-        {
+    "autoload": {
+        "psr-4": {
             "App\\": "src/app/"
         }
     }
