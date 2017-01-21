@@ -15,5 +15,16 @@
   "bugs": {
     "url": "https://github.com/dumindu/composer-project-skeleton/issues"
   },
-  "homepage": "https://github.com/dumindu/composer-project-skeleton#readme"
+  "homepage": "https://github.com/dumindu/composer-project-skeleton#readme",
+  "dependencies": {
+    "bootstrap": "^4.0.0-alpha.6",
+    "jquery": "^3.1.1",
+    "tether": "^1.4.0",
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^2.3.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-concat-css": "^2.3.0",
+    "gulp-gzip": "^1.4.0",
+    "gulp-uglify": "^2.0.0"
+  }
 }

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    {% block cssHeader %}
+    <link rel="stylesheet" href="/css/app.min.css">
+    {% endblock %}
+
+    <title> {{ pageMeta['title'] }} - Composer Project Skeleton</title>
+</head>
+<body>
+    {% block content %}{% endblock %}
+
+
+    {% block jsFooter %}
+    <script src="/js/app.min.js"></script>
+    {% endblock %}
+</body>
+</html>
