@@ -8,7 +8,9 @@
         }
     ],
     "minimum-stability": "dev",
-    "require": {},
+    "require": {
+        "bramus/router": "^1.1"
+    },
     "autoload":
     {
         "psr-4":
