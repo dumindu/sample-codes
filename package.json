@@ -1,0 +1,19 @@
+{
+  "name": "composer-project-skeleton",
+  "version": "1.0.0",
+  "description": "A simple PHP Composer project skeleton with Bootstrap 4",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dumindu/composer-project-skeleton.git"
+  },
+  "keywords": [
+    "bootstrap",
+    "gulp",
+    "skeleton"
+  ],
+  "author": "Dumindu Madunuwan",
+  "bugs": {
+    "url": "https://github.com/dumindu/composer-project-skeleton/issues"
+  },
+  "homepage": "https://github.com/dumindu/composer-project-skeleton#readme"
+}
