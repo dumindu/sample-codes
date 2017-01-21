@@ -1,6 +1,5 @@
 <?php
-namespace App;
-
+namespace App\Controllers;
 
 class HelloWorld
 {

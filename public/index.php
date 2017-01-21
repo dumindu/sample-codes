@@ -1,6 +1,3 @@
 <?php
-
-require __DIR__ . '/../vendor/autoload.php';
-
-$app = new \App\HelloWorld();
-echo $app->greet();
+require __DIR__ . '/../src/bootstrap/autoload.php';
+require __DIR__ . '/../src/bootstrap/app.php';
