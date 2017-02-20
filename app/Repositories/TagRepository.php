@@ -31,7 +31,7 @@ class TagRepository
 
     public function createTag($request)
     {
-        if (!$this->getTagByName($request->name)) {
+        if (!$this->getTagByName($request->name)->count()) {
             return $this->tag->insert(
                 [
                     'name' => $request->name,
@@ -44,7 +44,7 @@ class TagRepository
 
     public function updateTag($request, $id)
     {
-        if (!$this->getTagByName($request->name)) {
+        if (!$this->getTagByName($request->name)->count()) {
             $tag = $this->getTagById($id);
             $tag->name = $request->name;
             $tag->updated_at = date('Y-m-d H:i:s');
