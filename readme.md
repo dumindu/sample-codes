@@ -30,7 +30,7 @@ MAIL_PASSWORD=ed2e85c41e2785
 * Open [Postman App](https://www.getpostman.com/) and Import postman_collection.json in the project root
 
 #### Testable URLs
-![Testable_urls](http://i.imgur.com/IWIwMLy.png)
+<p align="center"><img src="http://i.imgur.com/IWIwMLy.png"></p>
 
 #### Points to Highlight
 
