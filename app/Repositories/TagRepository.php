@@ -46,9 +46,11 @@ class TagRepository
     {
         if (!$this->getTagByName($request->name)->count()) {
             $tag = $this->getTagById($id);
-            $tag->name = $request->name;
-            $tag->updated_at = date('Y-m-d H:i:s');
-            return $tag->save();
+            if ($tag) {
+                $tag->name = $request->name;
+                $tag->updated_at = date('Y-m-d H:i:s');
+                return $tag->save();
+            }
         }
     }
 

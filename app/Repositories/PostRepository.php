@@ -46,10 +46,12 @@ class PostRepository
     public function updatePost($request, $id)
     {
         $post = $this->getPostByPostId($id);
-        $post->title = $request->title;
-        $post->body = $request->body;
-        $post->updated_at = date('Y-m-d H:i:s');
-        return $post->save();
+        if ($post) {
+            $post->title = $request->title;
+            $post->body = $request->body;
+            $post->updated_at = date('Y-m-d H:i:s');
+            return $post->save();
+        }
     }
 
     public function deletePost($id)
