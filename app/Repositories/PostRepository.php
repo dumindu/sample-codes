@@ -40,7 +40,7 @@ class PostRepository
             ]
         );
 
-        return $isSuccess ? $isSuccess : false;
+        return $isSuccess ? $this->post->orderBy('created_at', 'desc')->first() : null;
     }
 
     public function updatePost($request, $id)

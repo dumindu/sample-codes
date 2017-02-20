@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Api\V1;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use App\Http\Controllers\Controller;
 use App\Repositories\PostRepository;
+use App\Mail\PostCreated;
 
 class PostController extends Controller
 {
@@ -44,7 +46,9 @@ class PostController extends Controller
             'body' => 'required',
         ]);
 
-        $result = $this->post->createPost($request);
+        $post = $this->post->createPost($request);
+        $result = Mail::send(new PostCreated($post));
+
         if ($result) {
             return response()->json();
         }

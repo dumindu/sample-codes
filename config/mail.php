@@ -29,7 +29,7 @@ return [
     |
     */
 
-    'host' => env('MAIL_HOST', 'smtp.mailgun.org'),
+    'host' => env('MAIL_HOST', 'smtp.mailtrap.io'),
 
     /*
     |--------------------------------------------------------------------------
@@ -42,7 +42,7 @@ return [
     |
     */
 
-    'port' => env('MAIL_PORT', 587),
+    'port' => env('MAIL_PORT', 2525),
 
     /*
     |--------------------------------------------------------------------------
@@ -56,8 +56,8 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
-        'name' => env('MAIL_FROM_NAME', 'Example'),
+        'address' => env('MAIL_FROM_ADDRESS', 'hello@lzdapitest.com'),
+        'name' => env('MAIL_FROM_NAME', 'API Test'),
     ],
 
     /*
@@ -118,6 +118,13 @@ return [
         'paths' => [
             resource_path('views/vendor/mail'),
         ],
+    ],
+
+    'pretend' => false,
+
+    'to' => [
+        'address' => 'someone@lzdapitest.com',
+        'name' => 'Some Name',
     ],
 
 ];
