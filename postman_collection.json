@@ -1,7 +1,7 @@
 {
 	"variables": [],
 	"info": {
-		"name": "API Test",
+		"name": "API Test V1",
 		"_postman_id": "9f4376db-07b4-41cf-4b79-2a4b67c5851d",
 		"description": "",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
@@ -15,6 +15,17 @@
 					"name": "GET /posts",
 					"request": {
 						"url": "http://127.0.0.1:8000/api/v1/posts/",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "GET /posts?tags={tags}",
+					"request": {
+						"url": "http://127.0.0.1:8000/api/v1/posts?tags=tag_01,tag_02",
 						"method": "GET",
 						"header": [],
 						"body": {},
@@ -98,6 +109,28 @@
 					"request": {
 						"url": "http://127.0.0.1:8000/api/v1/posts/3",
 						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "GET /posts/count",
+					"request": {
+						"url": "http://127.0.0.1:8000/api/v1/posts/count",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "GET /posts/count?tags={tags}",
+					"request": {
+						"url": "http://127.0.0.1:8000/api/v1/posts/count?tags=Tag_01,Tag_02",
+						"method": "GET",
 						"header": [],
 						"body": {},
 						"description": ""
