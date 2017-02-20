@@ -4,9 +4,17 @@ namespace App\Http\Controllers\Api\V1;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Repositories\PostRepository;
 
 class PostController extends Controller
 {
+    protected $post;
+
+    public function __construct(PostRepository $post)
+    {
+        $this->post = $post;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +22,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
+        return $this->post->getAllPostsWithTags();
     }
 
     /**
@@ -25,7 +33,15 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'title' => 'required',
+            'body' => 'required',
+        ]);
+
+        $result = $this->post->createPost($request);
+        if ($result) {
+            return response()->json();
+        }
     }
 
     /**
@@ -36,7 +52,7 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        //
+        return $this->post->getPostWithTagsByPostId($id);
     }
 
     /**
@@ -48,7 +64,15 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'title' => 'required',
+            'body' => 'required',
+        ]);
+
+        $result = $this->post->updatePost($request, $id);
+        if ($result) {
+            return response()->json();
+        }
     }
 
     /**
@@ -59,6 +83,9 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $result = $this->post->deletePost($id);
+        if ($result) {
+            return response()->json();
+        }
     }
 }

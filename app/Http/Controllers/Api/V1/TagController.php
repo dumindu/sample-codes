@@ -4,9 +4,17 @@ namespace App\Http\Controllers\Api\V1;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Repositories\TagRepository;
 
 class TagController extends Controller
 {
+    protected $tag;
+
+    public function __construct(TagRepository $tag)
+    {
+        $this->tag = $tag;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +22,7 @@ class TagController extends Controller
      */
     public function index()
     {
-        //
+        return $this->tag->getAllTags();
     }
 
     /**
@@ -25,7 +33,14 @@ class TagController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required'
+        ]);
+
+        $result = $this->tag->createTag($request);
+        if ($result) {
+            return response()->json();
+        }
     }
 
     /**
@@ -36,7 +51,7 @@ class TagController extends Controller
      */
     public function show($id)
     {
-        //
+        return $this->tag->getTagById($id);
     }
 
     /**
@@ -48,7 +63,14 @@ class TagController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required'
+        ]);
+
+        $result = $this->tag->updateTag($request, $id);
+        if ($result) {
+            return response()->json();
+        }
     }
 
     /**
@@ -59,6 +81,9 @@ class TagController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $result = $this->tag->deleteTag($id);
+        if ($result) {
+            return response()->json();
+        }
     }
 }
