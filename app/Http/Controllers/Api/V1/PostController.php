@@ -18,10 +18,16 @@ class PostController extends Controller
     /**
      * Display a listing of the resource.
      *
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        $tags = $request->input('tags');
+        if ($tags) {
+            return $this->post->getPostsWithTagsByTagNames($tags);
+        }
+
         return $this->post->getAllPostsWithTags();
     }
 

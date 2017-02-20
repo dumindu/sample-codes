@@ -18,6 +18,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::group(['prefix' => 'v1', 'namespace' => 'Api\V1'], function ($route) {
+    $route::get('posts/count', 'PostCountController@index');
     $route::resource('posts', 'PostController', [
         'except' => ['create', 'edit']
     ]);

@@ -64,4 +64,32 @@ class PostRepository
         }
     }
 
+    public function getPostsWithTagsByTagNames($tagsQuery)
+    {
+        if ($tagsQuery) {
+            $tags = explode(',', str_replace('_', ' ', $tagsQuery));
+            if ($tags) {
+                return $this->post->whereHas('tags', function ($query) use ($tags) {
+                    $query->whereIn('name', $tags);
+                })->with('tags')->get();
+            }
+        }
+    }
+
+    public function getAllPostCount()
+    {
+        return $this->post->count();
+    }
+
+    public function getPostCountByTagNames($tagsQuery)
+    {
+        if ($tagsQuery) {
+            $tags = explode(',', str_replace('_', ' ', $tagsQuery));
+            if ($tags) {
+                return $this->post->whereHas('tags', function ($query) use ($tags) {
+                    $query->whereIn('name', $tags);
+                })->count();
+            }
+        }
+    }
 }
