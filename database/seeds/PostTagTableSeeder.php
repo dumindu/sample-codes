@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class PostsTagsTableSeeder extends Seeder
+class PostTagTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,7 +11,7 @@ class PostsTagsTableSeeder extends Seeder
      */
     public function run()
     {
-        $postsTagsTableData = [
+        $postTagTableData = [
             [
                 'post_id' => 1,
                 'tag_id' => 1
@@ -30,6 +30,6 @@ class PostsTagsTableSeeder extends Seeder
             ]
         ];
 
-        DB::table('posts_tags')->insert($postsTagsTableData);
+        DB::table('post_tag')->insert($postTagTableData);
     }
 }
