@@ -58,9 +58,18 @@ class PostRepository
     {
         $post = $this->getPostByPostId($id);
         if ($post) {
+            $dataForEmail = [
+                'id' => $id,
+                'title' => $post->title,
+                'body' => $post->body,
+                'tags' => $post->tags() ? $post->tags()->pluck('name') : null
+            ];
+
             $postTag = new PostTag();
             $postTag->where('post_id', $id)->delete();
-            return $post->delete();
+            $post->delete();
+
+            return $dataForEmail;
         }
     }
 

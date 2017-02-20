@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api\V1;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Log;
 use App\Http\Controllers\Controller;
 use App\Repositories\PostRepository;
 use App\Mail\PostCreated;
@@ -93,7 +94,9 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        $result = $this->post->deletePost($id);
+        $deletedPostData = $this->post->deletePost($id);
+        $result = Log::info('Post Deleted!', $deletedPostData);
+
         if ($result) {
             return response()->json();
         }
