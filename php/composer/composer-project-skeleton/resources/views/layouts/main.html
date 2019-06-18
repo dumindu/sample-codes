@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    {% block cssHeader %}
+    <link rel="stylesheet" href="/css/app.min.css">
+    {% endblock %}
+
+    <title> {{ pageMeta['title'] }} - Composer Project Skeleton</title>
+</head>
+<body>
+    <header>
+        <div>
+            <i id="menu-btn" class="icon-menu"></i>
+        </div>
+
+        <div class="card card-inverse page-cover">
+            <img class="card-img" src="/images/cover.jpg" alt="Card image">
+            <div class="card-img-overlay">
+                <a href="/"><h4 class="card-title">Composer Skeleton</h4></a>
+
+            </div>
+        </div>
+    </header>
+
+    {% block content %}{% endblock %}
+
+    <footer id="footer" class="bg-faded">
+        <div class="container">
+            <span>Made with <i class="icon-heart"></i> by <a href="https://medium.com@dumindu">Dumindu Madunuwan</a></span>
+        </div>
+    </footer>
+
+    {% block jsFooter %}
+    <script src="/js/app.min.js"></script>
+    {% endblock %}
+</body>
+</html>
