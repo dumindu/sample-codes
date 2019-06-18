@@ -1,0 +1,230 @@
+{
+	"variables": [],
+	"info": {
+		"name": "API Test V1",
+		"_postman_id": "9f4376db-07b4-41cf-4b79-2a4b67c5851d",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Posts",
+			"description": "",
+			"item": [
+				{
+					"name": "GET /posts",
+					"request": {
+						"url": "http://127.0.0.1:8000/api/v1/posts/",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "GET /posts?tags={tags}",
+					"request": {
+						"url": "http://127.0.0.1:8000/api/v1/posts?tags=tag_01,tag_02",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "GET /posts/{id}",
+					"request": {
+						"url": "http://127.0.0.1:8000/api/v1/posts/1",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "POST /posts",
+					"request": {
+						"url": "http://127.0.0.1:8000/api/v1/posts/",
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "Sample Post 03",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "body",
+									"value": "Sample Post 03 Content",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "PUT /posts/{id}",
+					"request": {
+						"url": "http://127.0.0.1:8000/api/v1/posts/3",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "title",
+									"value": "Sample Post 003",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "body",
+									"value": "Sample Post 003 Content",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE /posts/{id}",
+					"request": {
+						"url": "http://127.0.0.1:8000/api/v1/posts/3",
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "GET /posts/count",
+					"request": {
+						"url": "http://127.0.0.1:8000/api/v1/posts/count",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "GET /posts/count?tags={tags}",
+					"request": {
+						"url": "http://127.0.0.1:8000/api/v1/posts/count?tags=Tag_01,Tag_02",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tags",
+			"description": "",
+			"item": [
+				{
+					"name": "GET /tags",
+					"request": {
+						"url": "http://127.0.0.1:8000/api/v1/tags/",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "GET /tags/{id}",
+					"request": {
+						"url": "http://127.0.0.1:8000/api/v1/tags/1",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "POST /tags",
+					"request": {
+						"url": "http://127.0.0.1:8000/api/v1/tags/",
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Tag 03",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "PUT /tags/{id}",
+					"request": {
+						"url": "http://127.0.0.1:8000/api/v1/tags/3",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Tag 003",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE /tags/{id}",
+					"request": {
+						"url": "http://127.0.0.1:8000/api/v1/tags/3",
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

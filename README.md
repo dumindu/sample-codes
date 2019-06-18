@@ -7,3 +7,4 @@ This is a growing collection of sample codes that I have written as answers for 
     * [Composer Project Skeleton](/php/composer/composer-project-skeleton)
   * Laravel 
     * [Hotel Rooms Management Calendar](/php/laravel/hotel-rooms-management-calendar/)
+    * [REST API Test](/php/laravel/apitest)
